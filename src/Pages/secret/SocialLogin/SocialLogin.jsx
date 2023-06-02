@@ -40,7 +40,7 @@ const SocialLogin = () => {
             <div className="divider"></div>
 
             <div className="w-full text-center my-4">
-                <button onClick={handleGoogleSigIn} className="btn btn-circle btn-outline">
+                <button type="button" onClick={handleGoogleSigIn} className="btn btn-circle btn-outline">
                     <FaGoogle></FaGoogle>
                 </button>
             </div>
