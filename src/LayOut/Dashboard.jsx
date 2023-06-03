@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaShoppingCart, FaCalendarAlt, FaHome, FaBook, FaUtensils, FaUsers } from 'react-icons/fa';
+import { FaShoppingCart, FaCalendarAlt, FaHome, FaBook, FaUtensils, FaUsers,FaShoppingBag } from 'react-icons/fa';
+import { MdEmail } from "react-icons/md";
 import { GiWallet, GiHamburgerMenu } from "react-icons/gi";
 import useCart from "../Hooks/useCart";
 import useAdmin from "../Hooks/useAdmin";
@@ -13,9 +14,9 @@ const Dashboard = () => {
         <div className="drawer drawer-mobile ">
 
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center justify-center">
-                <Outlet></Outlet>
+            <div className="drawer-content">
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                <Outlet></Outlet>
 
             </div>
             <div className="drawer-side ">
@@ -24,9 +25,9 @@ const Dashboard = () => {
                     {
                         isAdmin ? <>
                             <li><NavLink to='/dashboard/mycart'><FaHome></FaHome>Admin Home</NavLink></li>
-                            <li><NavLink to='/dashboard/'><FaUtensils></FaUtensils>Add Items</NavLink></li>
-                            <li><NavLink to='/dashboard/mycart'><GiWallet></GiWallet>  MAnage Items </NavLink> </li>
-                            <li><NavLink to='/dashboard/mycart'><FaBook></FaBook>  MAnage Book </NavLink> </li>
+                            <li><NavLink to='/dashboard/addItem'><FaUtensils></FaUtensils>Add an Items</NavLink></li>
+                            <li><NavLink to='/dashboard/manageitems'><GiWallet></GiWallet>  Manage Items </NavLink> </li>
+                            <li><NavLink to='/dashboard/mycart'><FaBook></FaBook>  Manage Book </NavLink> </li>
                             <li><NavLink to='/dashboard/allusers'><FaUsers></FaUsers>All  Users </NavLink> </li>
                         
                         </> : <>
@@ -53,9 +54,14 @@ const Dashboard = () => {
                         <NavLink to='/'><FaHome></FaHome>Home</NavLink>
                     </li>
                     <li><NavLink to='/menu'><GiHamburgerMenu></GiHamburgerMenu>Menu</NavLink></li>
-                    <li><NavLink to='/order/salad'><FaBook></FaBook>Shop</NavLink></li>
+                    <li><NavLink to='/order/salad'><FaShoppingBag></FaShoppingBag>Shop</NavLink></li>
                     <li>
-                        <NavLink to='/'>Contact</NavLink>
+                      
+                      <NavLink to='/'>
+                        <MdEmail>
+                      </MdEmail>
+                        Contact
+                        </NavLink>
                     </li>
 
                 </ul>
