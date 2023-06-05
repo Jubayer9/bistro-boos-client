@@ -24,7 +24,7 @@ const Dashboard = () => {
                 <ul className="menu p-4 w-80 bg-[#D1A054] ">
                     {
                         isAdmin ? <>
-                            <li><NavLink to='/dashboard/mycart'><FaHome></FaHome>Admin Home</NavLink></li>
+                            <li><NavLink to='/dashboard/adminhome'><FaHome></FaHome>Admin Home</NavLink></li>
                             <li><NavLink to='/dashboard/addItem'><FaUtensils></FaUtensils>Add an Items</NavLink></li>
                             <li><NavLink to='/dashboard/manageitems'><GiWallet></GiWallet>  Manage Items </NavLink> </li>
                             <li><NavLink to='/dashboard/mycart'><FaBook></FaBook>  Manage Book </NavLink> </li>
@@ -32,9 +32,9 @@ const Dashboard = () => {
                         
                         </> : <>
 
-                            <li><NavLink to='/dashboard/mycart'><FaHome></FaHome>User Home</NavLink></li>
+                            <li><NavLink to='/dashboard/userhome'><FaHome></FaHome>User Home</NavLink></li>
                             <li><NavLink to='/dashboard/'><FaCalendarAlt></FaCalendarAlt>Reservations</NavLink></li>
-                            <li><NavLink to='/dashboard/mycart'><GiWallet></GiWallet> Payment History </NavLink> </li>
+                            <li><NavLink to='/dashboard/payment'><GiWallet></GiWallet> Payment History </NavLink> </li>
                             <li><NavLink to='/dashboard/mycart'><FaShoppingCart></FaShoppingCart>My Cart
                                 <span className="badge badge-secondary">+ {cart?.length || 0}
                                 </span>
@@ -46,10 +46,10 @@ const Dashboard = () => {
 
 
 
-                    {/* 55555555555555555555555555555555555555555555555 */}
-
 
                     <div className="divider "></div>
+
+
                     <li>
                         <NavLink to='/'><FaHome></FaHome>Home</NavLink>
                     </li>
